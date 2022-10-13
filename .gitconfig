@@ -1,0 +1,10 @@
+[user]
+	name = Pranaya Deomani
+	email = pranayadeomani@protonmail.com
+	signingkey = 370A31FC9F6948FC
+[color]
+	ui = auto
+[commit]
+	gpgsign = true
+[init]
+	defaultbranch = main
