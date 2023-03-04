@@ -68,8 +68,14 @@ else
     alias cat='bat --style=changes,header,rule,numbers,snip'
 fi
 
+# Replace cut with choose
+alias cut='choose'
+
 # Replace df with duf
 alias df='duf'
+
+# Replace du with dust
+alias du='dust'
 
 # Replace find with fd
 if [[ -x "$(command -v fdfind)" ]]; then
@@ -81,10 +87,23 @@ fi
 # Replace grep with ripgrep
 alias grep='rg'
 
-# Replace ls with exa
-alias ls='exa --color=always --group-directories-first --icons'       # preferred listing
-alias la='exa -a --color=always --group-directories-first --icons'    # all files and dirs
-alias ll='exa -bl --color=always --group-directories-first --icons'   # long format
-alias lla='exa -abl --color=always --group-directories-first --icons' # all files and dirs in long format
-alias lt='exa -aT --color=always --group-directories-first --icons'   # tree listing
-alias l.="exa -a | grep -e '^\.'"                                     # show only dotfiles
+# Replace ls with lsd
+alias ls='lsd --group-directories-first'                                                                                      # preferred listing
+alias la='lsd -A --group-directories-first'                                                                                   # all files and dirs
+alias ll='lsd -l --blocks "permission,user,size,date,name" --date +"%e %b %I:%M %p" --group-directories-first --size short'   # long format
+alias lla='lsd -lA --blocks "permission,user,size,date,name" --date +"%e %b %I:%M %p" --group-directories-first --size short' # all files and dirs in long format
+alias lt='lsd --group-directories-first --tree'                                                                               # tree listing
+alias l.='lsd -A --group-directories-first | grep "^\."'                                                                      # show only dotfiles
+
+# Replace ping with gping
+alias ping='gping'
+
+# Replace ps with procs
+alias ps='procs'
+
+# Replace sed with sd
+alias sed='sd'
+
+# Replace tree with broot
+alias tree='br'
+source "$HOME/.config/broot/launcher/bash/br"
