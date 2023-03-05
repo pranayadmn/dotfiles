@@ -33,9 +33,9 @@ if [ -x "$(command -v nano)" ]; then
 fi
 
 # Neovim
-if [ -x "$(command -v nvim)" ]; then
-    [ ! -d "$HOME/.config" ] && mkdir "$HOME/.config"
-    ln -sf "$BASE_DIR/nvim" "$HOME/.config/nvim"
+if [ -x "$(command -v nvim)" ] && [ -x "$(command -v git)" ]; then
+    git clone git@github.com:NvChad/NvChad.git -b v2.0 "$HOME/.config/nvim"
+    ln -sf "$BASE_DIR/nvim" "$HOME/.config/nvim/lua/custom"
 fi
 
 # Zsh
