@@ -98,12 +98,6 @@ alias l.='lsd -A --group-directories-first | grep "^\."'                        
 # Replace ping with gping
 alias ping='gping'
 
-# Replace ps with procs
-alias ps='procs'
-
-# Replace sed with sd
-alias sed='sd'
-
 # Replace tree with broot
 alias tree='br'
 source "$HOME/.config/broot/launcher/bash/br"
