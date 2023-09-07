@@ -12,6 +12,7 @@ export GPG_TTY=$TTY
 # Use ccache to speed up subsequent builds
 if [[ -x "$(command -v ccache)" ]]; then
     export USE_CCACHE=1
+    export CCACHE_DIR="$HOME/.ccache"
     export CCACHE_EXEC=$(command -v ccache)
 fi
 
