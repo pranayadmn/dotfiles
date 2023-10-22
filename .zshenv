@@ -16,5 +16,5 @@ if [[ -x "$(command -v ccache)" ]]; then
     export CCACHE_EXEC=$(command -v ccache)
 fi
 
-# Add pipx packages to PATH
-export PATH="$PATH:$HOME/.local/bin"
+# Add cargo and pipx packages to PATH
+export PATH="$PATH:$HOME/.cargo/bin:$HOME/.local/bin"
