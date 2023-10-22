@@ -9,6 +9,7 @@
 [init]
 	defaultbranch = main
 [core]
+    hooksPath = ~/.git/hooks
     pager = delta
 [interactive]
     diffFilter = delta --color-only

@@ -3,7 +3,11 @@ BASE_DIR="$(dirname "$(readlink -f "$0")")"
 
 ## Credentials
 # Git config
-[ ! -f "$HOME/.gitconfig" ] && ln -sf "$BASE_DIR/.gitconfig" "$HOME/.gitconfig"
+if [ ! -f "$HOME/.gitconfig" ]; then
+    ln -sf "$BASE_DIR/.gitconfig" "$HOME/.gitconfig"
+    [ ! -d "$HOME/.git" ] && mkdir "$HOME/.git"
+    ln -sf "$BASE_DIR/git-hooks" "$HOME/.git/hooks"
+fi
 
 # GnuPG key
 if [ -d "$BASE_DIR/keys/gpg" ] && [ -x "$(command -v gpg)" ]; then
