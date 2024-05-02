@@ -8,6 +8,12 @@
 ## Inside string parameters, quotes should not be escaped -- the last
 ## double quote on the line will be seen as the closing quote.
 
+## If you want ^F, ^B, M-F and M-B to do what they did before version 8.0:
+# bind ^F forward main
+# bind ^B back main
+# bind M-F formatter main
+# bind M-B linter main
+
 ## Make 'nextword' (Ctrl+Right) and 'chopwordright' (Ctrl+Delete)
 ## stop at word ends instead of at beginnings.
 # set afterends
@@ -215,7 +221,7 @@ set zap
 # set errorcolor bold,white,red
 # set spotlightcolor black,lightyellow
 # set selectedcolor lightwhite,magenta
-# set stripecolor ,yellow
+# set stripecolor ,#444
 # set scrollercolor cyan
 # set numbercolor cyan
 # set keycolor cyan
@@ -254,9 +260,6 @@ include "/data/data/com.termux/files/usr/share/nano/*.nanorc"
 ## independent of the settings of 'tabsize' and 'tabstospaces':
 # extendsyntax python tabgives "    "
 
-## If <Tab> should always produce an actual TAB when editing a Makefile:
-# extendsyntax makefile tabgives "	"
-
 
 ## === Key bindings ===
 ## For all details, see 'man nanorc', section REBINDING KEYS.
@@ -286,11 +289,14 @@ include "/data/data/com.termux/files/usr/share/nano/*.nanorc"
 
 ## For quickly uppercasing or lowercasing the word under or after the cursor.
 ## (These effectively select a word and pipe it through a sed command.)
-#bind Sh-M-U "{nextword}{mark}{prevword}{execute}|sed 's/.*/\U&/'{enter}" main
-#bind Sh-M-L "{nextword}{mark}{prevword}{execute}|sed 's/.*/\L&/'{enter}" main
+# bind Sh-M-U "{nextword}{mark}{prevword}{execute}|sed 's/.*/\U&/'{enter}" main
+# bind Sh-M-L "{nextword}{mark}{prevword}{execute}|sed 's/.*/\L&/'{enter}" main
 
 ## For copying a marked region to the system clipboard:
-# bind Sh-M-T "{execute}|xsel -ib{enter}{undo}" main
+# bind Sh-M-C "{execute}|xsel -ib{enter}{undo}" main
+
+## For normalizing Unicode to precomposed characters:
+# bind Sh-M-N "{execute}| uconv -x nfc {enter}" main
 
 ## For snipping trailing blanks when you save a file:
 # bind ^S "{execute}| sed 's/\s\+$//' {enter}{savefile}" main
