@@ -1,7 +1,7 @@
 ## Environment variables
-# Set nano/neovim as the default editor
-if [[ -x "$(command -v nvim)" ]]; then
-    export EDITOR=nvim
+# Set helix/nano as the default editor
+if [[ -x "$(command -v hx)" ]]; then
+    export EDITOR=hx
 else
     export EDITOR=nano
 fi

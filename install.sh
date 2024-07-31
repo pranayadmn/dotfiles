@@ -36,12 +36,6 @@ if [ -x "$(command -v nano)" ]; then
     ln -sf "$BASE_DIR/.nanorc" "$HOME/.nanorc"
 fi
 
-# Neovim
-if [ -x "$(command -v nvim)" ] && [ -x "$(command -v git)" ]; then
-    git clone git@github.com:NvChad/NvChad.git -b v2.0 "$HOME/.config/nvim"
-    ln -sf "$BASE_DIR/nvim" "$HOME/.config/nvim/lua/custom"
-fi
-
 # Zsh
 [ ! -f "$HOME/.hushlogin" ] && touch "$HOME/.hushlogin"
 if [ -x "$(command -v zsh)" ]; then
