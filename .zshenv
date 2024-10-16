@@ -1,7 +1,8 @@
 ## Environment variables
 # Set helix/nano as the default editor
-if [[ -x "$(command -v hx)" ]]; then
-    export EDITOR=hx
+if [[ -x "$(command -v helix)" ]]; then
+    export EDITOR=helix
+    alias hx='helix'
 else
     export EDITOR=nano
 fi
