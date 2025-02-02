@@ -3,6 +3,8 @@
 if [[ -x "$(command -v helix)" ]]; then
     export EDITOR=helix
     alias hx='helix'
+elif [[ -x "$(command -v hx)" ]]; then
+    export EDITOR=hx
 else
     export EDITOR=nano
 fi
