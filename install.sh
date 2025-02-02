@@ -23,7 +23,7 @@ fi
 
 ## Configuration
 # Nano
-if [ -x "$(command -v nano)" ]; then
+if [ -x "$(command -v nano)" ] && [ ! -x "$(command -v pico)" ]; then
     if [ -z "$PREFIX" ]; then
         if [ "$EUID" -ne 0 ]; then
             sudo ln -sf "$BASE_DIR/etc/nanorc" /etc/nanorc
