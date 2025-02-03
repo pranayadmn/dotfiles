@@ -1,6 +1,8 @@
 ## Environment variables
-# Set helix/nano as the default editor
-if [[ -x "$(command -v helix)" ]]; then
+# Set helix/nano/zed as the default editor
+if [[ "$ZED" == "1" ]]; then
+    export EDITOR="zed --wait"
+elif [[ -x "$(command -v helix)" ]]; then
     export EDITOR=helix
     alias hx='helix'
 elif [[ -x "$(command -v hx)" ]]; then
