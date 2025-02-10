@@ -5,7 +5,7 @@ if [[ "$ZED" == "1" ]]; then
 elif [[ -x "$(command -v helix)" ]]; then
     export EDITOR=helix
     alias hx='helix'
-elif [[ -x "$(command -v hx)" ]]; then
+elif [[ -x "$(command -v hx)" || "$(uname)" == "Darwin" ]]; then
     export EDITOR=hx
 else
     export EDITOR=nano
