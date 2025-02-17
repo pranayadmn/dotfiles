@@ -87,13 +87,13 @@ fi
 # Replace grep with ripgrep
 alias grep='rg'
 
-# Replace ls with lsd
-alias ls='lsd --group-directories-first'                                                                                      # preferred listing
-alias la='lsd -A --group-directories-first'                                                                                   # all files and dirs
-alias ll='lsd -l --blocks "permission,user,size,date,name" --date +"%e %b %I:%M %p" --group-directories-first --size short'   # long format
-alias lla='lsd -lA --blocks "permission,user,size,date,name" --date +"%e %b %I:%M %p" --group-directories-first --size short' # all files and dirs in long format
-alias lt='lsd --group-directories-first --tree'                                                                               # tree listing
-alias l.='lsd -A --group-directories-first | grep "^\."'                                                                      # show only dotfiles
+# Replace ls with eza
+alias ls='eza --group-directories-first --icons'         # preferred listing
+alias la='eza -a --group-directories-first --icons'      # all files and dirs
+alias ll='eza -bl --group-directories-first --icons'     # long format
+alias lla='eza -abl --group-directories-first --icons'   # all files and dirs in long format
+alias lt='eza -aT --group-directories-first --icons'     # tree listing
+alias l.='eza -a --group-directories-first | grep "^\."' # show only dotfiles
 
 # Replace ping with gping
 alias ping='gping'
